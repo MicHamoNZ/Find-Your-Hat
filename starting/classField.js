@@ -41,17 +41,39 @@ class Field {
         console.log(row.join(' '));
       }
     }
+
+  // Static method to generate a randomized field with a hat and holes
+  static generateField(height, width, holes) {
+
+    const hat = '^';
+    const hole = 'O';
+    const fieldCharacter = '░';
+    const pathCharacter = '*';
+
+    const fieldArray = new Array(height).fill(null).map(() => new Array(width).fill(fieldCharacter));
+
+    // Place the pathCharacter in starting postion
+    fieldArray[0][0] = pathCharacter
+
+    // Randomly place the hat
+    const hatX = Math.floor(Math.random() * width);
+    const hatY = Math.floor(Math.random() * height);
+    fieldArray[hatY][hatX] = hat;
+
+    // Randomly place holes
+    for (let i = 0; i < holes; i++) {
+      let holeX = Math.floor(Math.random() * width);
+      let holeY = Math.floor(Math.random() * height);
+      // Ensure the hole is not placed on the hat or start
+      while (fieldArray[holeY][holeX] === hat && fieldArray[holeY][holex] === pathCharacter) {
+        holeX = Math.floor(Math.random() * width);
+        holeY = Math.floor(Math.random() * height);
+      }
+      fieldArray[holeY][holeX] = hole;
+    }
+
+    return fieldArray;
   }
+}
 
 module.exports = Field;
-
-// // Example usage:
-// const myFieldArray = [
-//     [0, 1, 0],
-//     [1, 1, 1],
-//     [0, 1, 0]
-//   ];
-  
-// const myField = new Field(myFieldArray);
-
-// myField.print();
