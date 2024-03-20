@@ -55,22 +55,22 @@ class Field {
     // Place the pathCharacter in starting postion
     fieldArray[0][0] = pathCharacter
 
-    // Randomly place the hat
-    const hatX = Math.floor(Math.random() * width);
-    const hatY = Math.floor(Math.random() * height);
-    fieldArray[hatY][hatX] = hat;
-
     // Randomly place holes
     for (let i = 0; i < holes; i++) {
       let holeX = Math.floor(Math.random() * width);
       let holeY = Math.floor(Math.random() * height);
       // Ensure the hole is not placed on the hat or start
-      while (fieldArray[holeY][holeX] === hat && fieldArray[holeY][holex] === pathCharacter) {
+      while (fieldArray[holeY][holeX] === hat && fieldArray[holeY][holeX] === pathCharacter) {
         holeX = Math.floor(Math.random() * width);
         holeY = Math.floor(Math.random() * height);
       }
       fieldArray[holeY][holeX] = hole;
     }
+    
+    // Randomly place the hat
+    const hatX = Math.floor(Math.random() * width);
+    const hatY = Math.floor(Math.random() * height);
+    fieldArray[hatY][hatX] = hat;
 
     return fieldArray;
   }
