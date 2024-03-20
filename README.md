@@ -34,7 +34,9 @@ Welcome to the Lost Hat Terminal Game! In this interactive terminal game, the pl
 
 7. **Objective**: Navigate the player character back to the hat ('^') without falling down a hole ('O') or stepping outside of the field ('░').
 
-8. **Have Fun!**
+8. **Game Over**: The game ends if the player falls into a hole or moves out of bounds. The player can restart the game if desired.
+
+9. **Have Fun!**
 
 ## Features Implemented
 
@@ -42,6 +44,18 @@ Welcome to the Lost Hat Terminal Game! In this interactive terminal game, the pl
 
 - **User Input and Movement**: Integrated user input functionality to allow players to indicate which direction they'd like to move in the field.
 
+- **Game Loop and Game Over Handling**: Implemented a game loop that continuously prompts the player for input until the game is won or lost. Added handling for game over scenarios, such as displaying a message and allowing the player to restart the game.
+
 ## Next Steps
 
-- **Game Logic**: Implement
+- **Improvements and Additions**: Consider adding features like multiple levels, scoring, or additional obstacles to make the game more challenging and engaging.
+
+- **Bug Fixes**: Address any bugs or issues reported by users to improve the overall gameplay experience.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug fixes, or feature implementations, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
